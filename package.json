@@ -8,15 +8,19 @@
     "gatsby"
   ],
   "scripts": {
+    "css-watch": "npm run css-build -- --watch",
     "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "start": "gatsby develop && npm run css-watch",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "css-build": "node-sass --omit-source-map-url ./src/sass/Styles.bulma.scss ./src/assets/styles.bulma.css"
   },
   "dependencies": {
+    "bulma": "^0.9.4",
     "gatsby": "^4.24.4",
+    "node-sass": "^7.0.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
